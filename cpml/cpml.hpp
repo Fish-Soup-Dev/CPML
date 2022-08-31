@@ -14,5 +14,6 @@
 #include "mat4.hpp"
 
 #include "math.hpp"
+#include "rand.hpp"
 
 #endif // CPML_HPP

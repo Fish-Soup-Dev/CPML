@@ -2,6 +2,7 @@
 #ifndef CPML_HPP
 #define CPML_HPP
 
+// C plus Math Library
 // Made by Andrew Kawalec 8/30/2022
 // Include this for accses to functions
 

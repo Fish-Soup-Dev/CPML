@@ -49,12 +49,42 @@ namespace cpml
                 this->y /= a.y;
                 return *this;
             }
+
+            vec2& operator++()
+            {
+                this->x++;
+                this->y++;
+                return *this;
+            }
+
+            vec2& operator--()
+            {
+                this->x--;
+                this->y--;
+                return *this;
+            }
     };
 
     std::ostream& operator<<(std::ostream &out, const vec2 &a)
     {
         out << a.x << ", " << a.y;
         return out;
+    }
+
+    bool operator==(const vec2 a, const vec2 b)
+    {
+        if (a.x == b.x && a.y == b.y)
+            return true;
+
+        return false;
+    }
+
+    bool operator!=(const vec2 a, const vec2 b)
+    {
+        if (a.x == b.x && a.y == b.y)
+            return false;
+        
+        return true;
     }
 
     vec2 operator+(const vec2 a, const vec2 b)

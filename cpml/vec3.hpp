@@ -56,12 +56,44 @@ namespace cpml
                 this->z /= a.z;
                 return *this;
             }
+
+            vec3& operator++()
+            {
+                this->x++;
+                this->y++;
+                this->z++;
+                return *this;
+            }
+
+            vec3& operator--()
+            {
+                this->x--;
+                this->y--;
+                this->z--;
+                return *this;
+            }
     };
 
     std::ostream& operator<<(std::ostream &out, const vec3 &a)
     {
         out << a.x << ", " << a.y << ", "<< a.z;
         return out;
+    }
+
+    bool operator==(const vec3 a, const vec3 b)
+    {
+        if (a.x == b.x && a.y == b.y && a.z == b.z)
+            return true;
+            
+        return false;
+    }
+
+    bool operator!=(const vec3 a, const vec3 b)
+    {
+        if (a.x == b.x && a.y == b.y && a.z == b.z)
+            return false;
+        
+        return true;
     }
 
     vec3 operator+(const vec3 a, const vec3 b)

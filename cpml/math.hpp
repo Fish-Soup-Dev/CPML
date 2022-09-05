@@ -27,6 +27,8 @@ namespace cpml
         return n * (frac(n - 1));
     }
 
+    template <typename T, typename U> double pow(T base, U ex);
+
     double nth_root(double A, int n)
     {
         const int K = 6;

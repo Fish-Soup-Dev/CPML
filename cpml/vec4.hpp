@@ -64,12 +64,45 @@ namespace cpml
                 return *this;
             }
 
+            vec4& operator++()
+            {
+                this->x++;
+                this->y++;
+                this->z++;
+                this->w++;
+                return *this;
+            }
+
+            vec4& operator--()
+            {
+                this->x--;
+                this->y--;
+                this->z--;
+                this->w--;
+                return *this;
+            }
     };
 
     std::ostream& operator<<(std::ostream &out, const vec4 &a)
     {
         out << a.x << ", " << a.y << ", "<< a.z << ", " << a.w;
         return out;
+    }
+
+    bool operator==(const vec4 a, const vec4 b)
+    {
+        if (a.x == b.x && a.y == b.y && a.z == b.z && a.w == b.w)
+            return true;
+            
+        return false;
+    }
+
+    bool operator!=(const vec4 a, const vec4 b)
+    {
+        if (a.x == b.x && a.y == b.y && a.z == b.z && a.w == b.w)
+            return false;
+        
+        return true;
     }
 
     vec4 operator+(const vec4 a, const vec4 b)

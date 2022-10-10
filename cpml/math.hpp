@@ -80,11 +80,11 @@ namespace cpml
             sign = -1;
         }
         double result = n;
-        double coefficent = 3.0;
+        double coefficient = 3.0;
         for (int i = 0; i < 10; i++)
         {
-            double power = pow(n, coefficent);
-            double factorial = frac(coefficent);
+            double power = pow(n, coefficient);
+            double factorial = frac(coefficient);
             if (i % 2 == 0)
             {
                 result = result - (power / factorial);
@@ -93,7 +93,7 @@ namespace cpml
             {
                 result = result + (power / factorial);
             }
-            coefficent += 2;
+            coefficient += 2;
         }
         return sign * result;
     }
@@ -142,13 +142,13 @@ namespace cpml
         return x;
     }
 
-    // Converts Radins to Degrees
+    // Converts Radians to Degrees
     template <typename T> double RadToDeg(T x)
     {
         return (x * (180 / pi));
     }
 
-    // Converts Degrees to Radins
+    // Converts Degrees to Radians
     template <typename T> double DegToRad(T x)
     {
         return (x * (pi / 180));
@@ -164,6 +164,12 @@ namespace cpml
     template <typename T> double exp2(T x)
     {
         return pow(2, x);
+    }
+
+    // Maps one rage of values to another
+    template <typename T> double map(T x, T input_start, T input_end, T output_start, T output_end)
+    {
+        return (x - input_start) / (input_end - input_start) * (output_end - output_start) + output_start;
     }
 
 } // cpml namespace
